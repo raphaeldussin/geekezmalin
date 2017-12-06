@@ -1,0 +1,46 @@
+This example demonstrate how you can use Fortran90 to 
+integrate in time a simple 2d diffusion equation.
+(Raf Dussin)
+
+It shows how to :
+~~~~~~~~~~~~~~~~~
+
+* perform a simple Euler time stepping, within its stability range
+* use halos around the computation domain
+* compute the laplacian with the simple 5 points stencil
+* read parameters from namelist
+* output the results in a netcdf file
+* write a Makefile and namelist
+
+Requires :
+~~~~~~~~~~
+
+* GNU make 
+* fortran compiler
+* netcdf library
+
+Makefile is written for gfortran but can be adapted for any
+other compiler (intel, pgi,...)
+
+Using the example:
+~~~~~~~~~~~~~~~~~~
+
+To compile code and run it:
+
+>>> make run
+
+To compile only:
+
+>>> make
+
+then run:
+
+./diffusion2d namelist
+
+To clean executable:
+
+>>> make clean
+
+To clean results:
+
+rm tracer_diffusion_2d.nc

@@ -1,0 +1,25 @@
+! namelist
+&naminput
+! size of the domain in x (in km)
+Lx=1000
+! size of the domain in y (in km)
+Ly=500
+! horizontal resolution (in km)
+dxy=25
+! time step (in seconds)
+dt=100
+! number of time steps to run
+nt=100000
+! write every nwrite time steps
+nwrite=1000
+! location of anomaly in x
+zx0 = 500
+! location of anomaly in y
+zy0 = 250
+! radius of the anomaly
+r0 = 100
+! diffusivity 
+kdiff=0.01
+! output filename
+cfileout = 'tracer_diffusion_2d.nc'
+/
