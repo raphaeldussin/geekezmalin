@@ -1,0 +1,12 @@
+This example demonstrates how Fortran90 can be useful to perform
+large analysis on a great number of output files. 
+(Raf Dussin)
+
+For cases where your analysis software (python, matlab,...) cannot fit into memory
+the whole content of the data you need to compute a diagnostic, or is slow to perform,
+it is useful to write a fortran tool to compute this diag and write the result into a file.
+
+compute_mean_Tsquared.f90 compute the time-averaged T*T from a list of ROMS output files.
+Rather than loading the whole data from all files, then putting it to the square then averaging
+over the time axis, we break down the problem into smaller chunks that fit into memory and keep
+the number of files opened at any given time limited to 2.
