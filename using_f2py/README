@@ -1,0 +1,16 @@
+This example demonstrates how to interface fortran code with python using f2py.
+When python is slow, or your algo uses loops and if statements, it can be useful to
+farm off the slow piece of code to fortran.
+
+example_watermass.py computes the volume of ocean water masses between different
+temperature bounds.
+
+Obtaining data from World Ocean Atlas:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+>>> make getdata
+
+Running the example:
+~~~~~~~~~~~~~~~~~~~~
+
+>>> make run
