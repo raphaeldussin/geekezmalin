@@ -1,0 +1,4 @@
+Examples for plotting using python cartopy :
+
+* example1 shows how to make a regional plot of SST using WOA data
+and setting up the map and background for nicer looking plot than default
