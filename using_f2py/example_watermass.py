@@ -53,10 +53,10 @@ mask[np.where(temp.mask == True)] = 0
 #---------------------------------------------------------------
 # sanity checks
 # compute water volume between 50C and 55C (never observed)
-wmass_testimpossible = lib_watermass.volume_watermass_from_ts(temp,salt,dz,dx,dy,50.,55.,0.,40.)
+wmass_testimpossible = lib_watermass.volume_watermass_from_ts(dx.T,dy.T,dz.T,temp.T,salt.T,50.,55.,0.,40.)
 
 # compute all possible volume
-wmass_testall = lib_watermass.volume_watermass_from_ts(temp,salt,dz,dx,dy,-10.,100.,0.,50.)
+wmass_testall = lib_watermass.volume_watermass_from_ts(dx.T,dy.T,dz.T,temp.T,salt.T,-10.,100.,0.,50.)
 
 # and compare to volume from metrics
 wmass_from_metrics = (dz * dx * dy * mask).sum()
@@ -69,11 +69,11 @@ print 'volume from scale factors = ', wmass_from_metrics
 #---------------------------------------------------------------
 # now let's learn some stuff
 # compute volume of water 20C < T < 40C
-wmass_20to40C = lib_watermass.volume_watermass_from_ts(temp,salt,dz,dx,dy,20.,40.,0.,40.)
+wmass_20to40C = lib_watermass.volume_watermass_from_ts(dx.T,dy.T,dz.T,temp.T,salt.T,20.,40.,0.,40.)
 # compute volume of water 10C < T < 20C
-wmass_10to20C = lib_watermass.volume_watermass_from_ts(temp,salt,dz,dx,dy,10.,20.,0.,40.)
+wmass_10to20C = lib_watermass.volume_watermass_from_ts(dx.T,dy.T,dz.T,temp.T,salt.T,10.,20.,0.,40.)
 # compute volume of water 0C < T < 10C
-wmass_0to10C = lib_watermass.volume_watermass_from_ts(temp,salt,dz,dx,dy,0.,10.,0.,40.)
+wmass_0to10C = lib_watermass.volume_watermass_from_ts(dx.T,dy.T,dz.T,temp.T,salt.T,0.,10.,0.,40.)
 
 print '---Volume of ocean in temperature ranges---'
 print 'The percentage of ocean waters 20C < T < 40C is ', 100 * wmass_20to40C / wmass_from_metrics, '%'
