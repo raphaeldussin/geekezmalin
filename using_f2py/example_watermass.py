@@ -61,10 +61,10 @@ wmass_testall = lib_watermass.volume_watermass_from_ts(dx.T,dy.T,dz.T,temp.T,sal
 # and compare to volume from metrics
 wmass_from_metrics = (dz * dx * dy * mask).sum()
 
-print '---Control checks---'
-print 'Impossible water mass, volume =', wmass_testimpossible
-print 'All possible water, volume =', wmass_testall
-print 'volume from scale factors = ', wmass_from_metrics
+print('---Control checks---')
+print('Impossible water mass, volume =', wmass_testimpossible)
+print('All possible water, volume =', wmass_testall)
+print('volume from scale factors = ', wmass_from_metrics)
 
 #---------------------------------------------------------------
 # now let's learn some stuff
@@ -75,8 +75,8 @@ wmass_10to20C = lib_watermass.volume_watermass_from_ts(dx.T,dy.T,dz.T,temp.T,sal
 # compute volume of water 0C < T < 10C
 wmass_0to10C = lib_watermass.volume_watermass_from_ts(dx.T,dy.T,dz.T,temp.T,salt.T,0.,10.,0.,40.)
 
-print '---Volume of ocean in temperature ranges---'
-print 'The percentage of ocean waters 20C < T < 40C is ', 100 * wmass_20to40C / wmass_from_metrics, '%'
-print 'The percentage of ocean waters 10C < T < 20C is ', 100 * wmass_10to20C / wmass_from_metrics, '%'
-print 'The percentage of ocean waters  0C < T < 10C is ', 100 * wmass_0to10C / wmass_from_metrics, '%'
+print('---Volume of ocean in temperature ranges---')
+print('The percentage of ocean waters 20C < T < 40C is ', 100 * wmass_20to40C / wmass_from_metrics, '%')
+print('The percentage of ocean waters 10C < T < 20C is ', 100 * wmass_10to20C / wmass_from_metrics, '%')
+print('The percentage of ocean waters  0C < T < 10C is ', 100 * wmass_0to10C / wmass_from_metrics, '%')
 
