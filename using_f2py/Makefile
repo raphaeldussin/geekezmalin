@@ -1,11 +1,11 @@
 
-all: lib_watermass.so creeping_sea.so
+all: lib_watermass.so fill_msg_grid.so
 
 lib_watermass.so: lib_watermass.f90
 	f2py -c -m lib_watermass lib_watermass.f90
 
-creeping_sea.so: creeping_sea.f90
-	f2py -c -m creeping_sea creeping_sea.f90
+fill_msg_grid.so: fill_msg_grid.f90
+	f2py -c -m fill_msg_grid fill_msg_grid.f90
 
 clean:
 	\rm -Rf *.so *.dSYM
